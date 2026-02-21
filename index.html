@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SECURITY: Content Security Policy (defense-in-depth, backup for server CSP) -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data: https:;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self' http://localhost:5000;
+        object-src 'none';
+        frame-ancestors 'none';
+        base-uri 'self';
+        form-action 'self' http://localhost:5000;
+      "
+    />
+
+    <!-- SECURITY: Prevent MIME type sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- SECURITY: Referrer policy — don't leak URLs to third parties -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="CodeFlow - AI-powered code generation platform for developers. Build smarter with intelligent code suggestions."
+    />
+    <meta
+      name="keywords"
+      content="AI, coding, code generation, developer tools, artificial intelligence"
+    />
+
+    <title>CodeFlow - AI-Powered Code Generation</title>
+  </head>
+  <body>
+    <!-- SECURITY: noscript fallback for users with JS disabled -->
+    <noscript>
+      <p style="text-align:center;padding:2rem;color:#fff;background:#020617;">
+        CodeFlow requires JavaScript to run. Please enable JavaScript in your browser.
+      </p>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
