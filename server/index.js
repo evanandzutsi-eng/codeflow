@@ -391,7 +391,7 @@ app.post('/api/generate',
       // The AI service API key is ONLY on the server — never sent to client
       const aiApiKey = process.env.AI_SERVICE_API_KEY;
       if (!aiApiKey) {
-        securityLogger.error('AI_SERVICE_API_KEY is not configured');
+        securityLogger.error('DB_API_KEY is not configured');
         return res.status(500).json({
           success: false,
           error: 'AI service temporarily unavailable.',
